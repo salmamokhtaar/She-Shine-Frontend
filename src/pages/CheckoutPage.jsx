@@ -17,7 +17,7 @@ const CheckoutPage = () => {
           return;
         }
 
-        const res = await fetch("http://localhost:5001/api/cart", {
+        const res = await fetch("https://ecommercebackend-aa6n.onrender.com/api/cart", {
           headers: { Authorization: `Bearer ${token}` },
         });
 
@@ -76,7 +76,7 @@ const CheckoutPage = () => {
       // Show loading toast
       const loadingToast = toast.loading("Processing your order...");
 
-      const res = await fetch("http://localhost:5001/api/orders/checkout", {
+      const res = await fetch("https://ecommercebackend-aa6n.onrender.com/api/orders/checkout", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

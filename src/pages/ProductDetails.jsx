@@ -18,7 +18,7 @@ const ProductDetails = () => {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const res = await fetch(`http://localhost:5001/api/products/${id}`);
+        const res = await fetch(`https://ecommercebackend-aa6n.onrender.com/api/products/${id}`);
         const data = await res.json();
         setProduct(data);
         setSelectedImage(data.image);
@@ -78,11 +78,11 @@ const ProductDetails = () => {
       <section className="max-w-6xl mx-auto p-4 lg:p-8 flex flex-col lg:flex-row gap-10">
         <div className="w-full lg:w-1/2">
           <div className="border rounded-lg overflow-hidden mb-4">
-            <img src={`http://localhost:5001${selectedImage}`} alt={product.name} className="w-full h-[400px] object-contain" />
+            <img src={`https://ecommercebackend-aa6n.onrender.com${selectedImage}`} alt={product.name} className="w-full h-[400px] object-contain" />
           </div>
           <div className="flex gap-2">
             {[product.image, ...(product.gallery || [])].map((img, idx) => (
-              <img key={idx} src={`http://localhost:5001${img}`} alt="thumb" onClick={() => setSelectedImage(img)} className={`h-20 w-20 object-cover border rounded cursor-pointer ${selectedImage === img ? "border-pink-600" : "border-gray-300"}`} />
+              <img key={idx} src={`https://ecommercebackend-aa6n.onrender.com${img}`} alt="thumb" onClick={() => setSelectedImage(img)} className={`h-20 w-20 object-cover border rounded cursor-pointer ${selectedImage === img ? "border-pink-600" : "border-gray-300"}`} />
             ))}
           </div>
         </div>

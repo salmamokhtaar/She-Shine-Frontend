@@ -14,7 +14,7 @@ const CategoriesPage = () => {
   useEffect(() => {
     const fetchAll = async () => {
       try {
-        const res = await fetch("http://localhost:5001/api/products/categories");
+        const res = await fetch("https://ecommercebackend-aa6n.onrender.com/api/products/categories");
         const data = await res.json();
         setAllCategories(data);
 
@@ -81,7 +81,7 @@ const CategoriesPage = () => {
               className="bg-white rounded-lg shadow p-4 hover:shadow-lg transition block"
             >
               <img
-                src={product.image ? `http://localhost:5001${product.image}` : DEFAULT_IMAGE}
+                src={product.image ? `https://ecommercebackend-aa6n.onrender.com${product.image}` : DEFAULT_IMAGE}
                 alt={product.name}
                 className="w-full h-56 object-contain mb-3"
               />

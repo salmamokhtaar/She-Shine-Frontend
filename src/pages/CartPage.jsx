@@ -22,7 +22,7 @@ const CartPage = () => {
     }
 
     try {
-      const res = await fetch("http://localhost:5001/api/cart", {
+      const res = await fetch("https://ecommercebackend-aa6n.onrender.com/api/cart", {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();
@@ -68,7 +68,7 @@ const CartPage = () => {
     if (newQty < 1) return;
 
     try {
-      const response = await fetch("http://localhost:5001/api/cart/add", {
+      const response = await fetch("https://ecommercebackend-aa6n.onrender.com/api/cart/add", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -96,7 +96,7 @@ const CartPage = () => {
     }
 
     try {
-      const response = await fetch(`http://localhost:5001/api/cart/remove/${productId}`, {
+      const response = await fetch(`https://ecommercebackend-aa6n.onrender.com/api/cart/remove/${productId}`, {
         method: "DELETE",
         headers: { Authorization: `Bearer ${token}` },
       });
@@ -165,7 +165,7 @@ const CartPage = () => {
                   <img
                     src={
                       productId.image
-                        ? `http://localhost:5001${productId.image}`
+                        ? `https://ecommercebackend-aa6n.onrender.com${productId.image}`
                         : DEFAULT_IMAGE
                     }
                     alt={productId.name || "Product"}

@@ -23,7 +23,7 @@ const WishlistPage = () => {
     if (!token) return;
 
     try {
-      const res = await fetch("http://localhost:5001/api/wishlist", {
+      const res = await fetch("https://ecommercebackend-aa6n.onrender.com/api/wishlist", {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();
@@ -87,7 +87,7 @@ const WishlistPage = () => {
               >
                 <div className="flex items-center gap-4">
                   <img
-                    src={productId.image ? `http://localhost:5001${productId.image}` : DEFAULT_IMAGE}
+                    src={productId.image ? `https://ecommercebackend-aa6n.onrender.com${productId.image}` : DEFAULT_IMAGE}
                     alt={productId.name}
                     className="h-16 w-16 rounded object-cover"
                   />

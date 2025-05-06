@@ -21,7 +21,7 @@ const NewArrivalsGrid = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch("http://localhost:5001/api/products/tag/new");
+        const response = await fetch("https://ecommercebackend-aa6n.onrender.com/api/products/tag/new");
         const data = await response.json();
         setProducts(data);
       } catch (error) {
@@ -101,7 +101,7 @@ const NewArrivalsGrid = () => {
                   <img
                     src={
                       product.image
-                        ? `http://localhost:5001${product.image}`
+                        ? `https://ecommercebackend-aa6n.onrender.com${product.image}`
                         : DEFAULT_IMAGE
                     }
                     alt={product.name}

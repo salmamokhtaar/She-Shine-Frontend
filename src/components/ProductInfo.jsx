@@ -7,7 +7,7 @@ const ProductInfo = () => {
   useEffect(() => {
     const fetchFeaturedProducts = async () => {
       try {
-        const response = await fetch("http://localhost:5001/api/products/featured");
+        const response = await fetch("https://ecommercebackend-aa6n.onrender.com/api/products/featured");
         const data = await response.json();
         setFeaturedProducts(data);
       } catch (error) {
@@ -36,7 +36,7 @@ const ProductInfo = () => {
         <div className="w-full lg:w-1/2 flex justify-center relative">
           <div className="w-[300px] h-[300px] flex items-center justify-center">
             <img
-              src={`http://localhost:5001${featuredProducts[activeStep].image}`}
+              src={`https://ecommercebackend-aa6n.onrender.com${featuredProducts[activeStep].image}`}
               alt={featuredProducts[activeStep].name}
               className="w-full h-full object-contain"
             />
@@ -66,7 +66,7 @@ const ProductInfo = () => {
               {/* Only show image for active */}
               {activeStep === index && (
                 <img
-                  src={`http://localhost:5001${product.image}`}
+                  src={`https://ecommercebackend-aa6n.onrender.com${product.image}`}
                   alt={product.name}
                   className="w-14 h-14 rounded-lg object-cover"
                 />

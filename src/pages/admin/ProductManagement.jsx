@@ -107,7 +107,7 @@ const ProductManagement = () => {
         tags: product.tags ? product.tags.join(', ') : '',
         image: null
       });
-      setImagePreview(`http://localhost:5001${product.image}`);
+      setImagePreview(`https://ecommercebackend-aa6n.onrender.com${product.image}`);
     } else {
       setCurrentProduct(null);
       setFormData({
@@ -439,7 +439,7 @@ const ProductManagement = () => {
                       <div className="flex-shrink-0 h-10 w-10">
                         <img
                           className="h-10 w-10 rounded-full object-cover"
-                          src={`http://localhost:5001${product.image}`}
+                          src={`https://ecommercebackend-aa6n.onrender.com${product.image}`}
                           alt={product.name}
                         />
                       </div>

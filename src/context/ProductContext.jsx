@@ -1,6 +1,7 @@
 import React, { createContext, useState, useContext } from 'react';
 import { useAuth } from './AuthContext';
 import { toast } from 'react-toastify';
+import config from '../config/config';
 
 const ProductContext = createContext();
 
@@ -16,10 +17,10 @@ export const ProductProvider = ({ children }) => {
   const fetchProducts = async (category = null) => {
     try {
       setLoading(true);
-      let url = 'http://localhost:5001/api/products';
+      let url = `${config.API_URL}/api/products`;
 
       if (category) {
-        url = `http://localhost:5001/api/products/category/${category}`;
+        url = `${config.API_URL}/api/products/category/${category}`;
       }
 
       const response = await fetch(url);
@@ -42,7 +43,7 @@ export const ProductProvider = ({ children }) => {
   const fetchFeaturedProducts = async () => {
     try {
       setLoading(true);
-      const response = await fetch('http://localhost:5001/api/products/featured');
+      const response = await fetch(`${config.API_URL}/api/products/featured`);
 
       if (!response.ok) {
         throw new Error('Failed to fetch featured products');
@@ -62,7 +63,7 @@ export const ProductProvider = ({ children }) => {
   const fetchProductById = async (productId) => {
     try {
       setLoading(true);
-      const response = await fetch(`http://localhost:5001/api/products/${productId}`);
+      const response = await fetch(`${config.API_URL}/api/products/${productId}`);
 
       if (!response.ok) {
         throw new Error('Failed to fetch product');
@@ -81,7 +82,7 @@ export const ProductProvider = ({ children }) => {
   const fetchCategories = async () => {
     try {
       setLoading(true);
-      const response = await fetch('http://localhost:5001/api/products/categories');
+      const response = await fetch('https://ecommercebackend-aa6n.onrender.com/api/products/categories');
 
       if (!response.ok) {
         throw new Error('Failed to fetch categories');
@@ -144,7 +145,7 @@ export const ProductProvider = ({ children }) => {
         }
       });
 
-      const response = await fetch('http://localhost:5001/api/products', {
+      const response = await fetch(`${config.API_URL}/api/products`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`
@@ -177,7 +178,7 @@ export const ProductProvider = ({ children }) => {
     try {
       setLoading(true);
 
-      const response = await fetch(`http://localhost:5001/api/products/${productId}`, {
+      const response = await fetch(`${config.API_URL}/api/products/${productId}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -211,7 +212,7 @@ export const ProductProvider = ({ children }) => {
     try {
       setLoading(true);
 
-      const response = await fetch(`http://localhost:5001/api/products/${productId}`, {
+      const response = await fetch(`${config.API_URL}/api/products/${productId}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`

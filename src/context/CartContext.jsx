@@ -28,7 +28,7 @@ export const CartProvider = ({ children }) => {
 
     try {
       setLoading(true);
-      const response = await fetch('http://localhost:5001/api/cart', {
+      const response = await fetch('https://ecommercebackend-aa6n.onrender.com/api/cart', {
         headers: { 'Authorization': `Bearer ${token}` }
       });
 
@@ -54,7 +54,7 @@ export const CartProvider = ({ children }) => {
 
     try {
       setLoading(true);
-      const response = await fetch('http://localhost:5001/api/cart/add', {
+      const response = await fetch('https://ecommercebackend-aa6n.onrender.com/api/cart/add', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -83,7 +83,7 @@ export const CartProvider = ({ children }) => {
 
     try {
       setLoading(true);
-      const response = await fetch(`http://localhost:5001/api/cart/remove/${productId}`, {
+      const response = await fetch(`https://ecommercebackend-aa6n.onrender.com/api/cart/remove/${productId}`, {
         method: 'DELETE',
         headers: { 'Authorization': `Bearer ${token}` }
       });
@@ -109,7 +109,7 @@ export const CartProvider = ({ children }) => {
 
     try {
       setLoading(true);
-      const response = await fetch('http://localhost:5001/api/cart/add', {
+      const response = await fetch('https://ecommercebackend-aa6n.onrender.com/api/cart/add', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

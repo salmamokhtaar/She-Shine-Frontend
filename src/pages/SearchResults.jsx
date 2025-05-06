@@ -105,7 +105,7 @@ const SearchResults = () => {
               <div key={product._id} className="bg-white rounded-lg shadow-md overflow-hidden">
                 <Link to={`/product/${product._id}`} className="block relative h-48 overflow-hidden">
                   <img
-                    src={`http://localhost:5001${product.image}`}
+                    src={`https://ecommercebackend-aa6n.onrender.com${product.image}`}
                     alt={product.name}
                     className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                     onError={(e) => {

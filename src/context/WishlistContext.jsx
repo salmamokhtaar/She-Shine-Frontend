@@ -30,7 +30,7 @@ export const WishlistProvider = ({ children }) => {
 
     try {
       setLoading(true);
-      const response = await fetch('http://localhost:5001/api/wishlist', {
+      const response = await fetch('https://ecommercebackend-aa6n.onrender.com/api/wishlist', {
         headers: { 'Authorization': `Bearer ${token}` }
       });
 
@@ -56,7 +56,7 @@ export const WishlistProvider = ({ children }) => {
 
     try {
       setLoading(true);
-      const response = await fetch('http://localhost:5001/api/wishlist/add', {
+      const response = await fetch('https://ecommercebackend-aa6n.onrender.com/api/wishlist/add', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -90,7 +90,7 @@ export const WishlistProvider = ({ children }) => {
 
     try {
       setLoading(true);
-      const response = await fetch(`http://localhost:5001/api/wishlist/remove/${productId}`, {
+      const response = await fetch(`https://ecommercebackend-aa6n.onrender.com/api/wishlist/remove/${productId}`, {
         method: 'DELETE',
         headers: { 'Authorization': `Bearer ${token}` }
       });

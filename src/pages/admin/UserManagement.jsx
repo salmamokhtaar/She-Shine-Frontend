@@ -68,7 +68,7 @@ const UserManagement = () => {
   const fetchUsers = async () => {
     try {
       setLoading(true);
-      const response = await fetch('http://localhost:5001/api/users', {
+      const response = await fetch('https://ecommercebackend-aa6n.onrender.com/api/users', {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -173,7 +173,7 @@ const UserManagement = () => {
 
         if (selectedUser) {
           // Update existing user
-          response = await fetch(`http://localhost:5001/api/users/${selectedUser._id}`, {
+          response = await fetch(`https://ecommercebackend-aa6n.onrender.com/api/users/${selectedUser._id}`, {
             method: 'PUT',
             headers: {
               'Content-Type': 'application/json',
@@ -183,7 +183,7 @@ const UserManagement = () => {
           });
         } else {
           // Create new user (register)
-          response = await fetch('http://localhost:5001/api/auth/register', {
+          response = await fetch('https://ecommercebackend-aa6n.onrender.com/api/auth/register', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json'
@@ -224,7 +224,7 @@ const UserManagement = () => {
 
       try {
         setLoading(true);
-        const response = await fetch(`http://localhost:5001/api/users/${selectedUser._id}`, {
+        const response = await fetch(`https://ecommercebackend-aa6n.onrender.com/api/users/${selectedUser._id}`, {
           method: 'DELETE',
           headers: {
             'Authorization': `Bearer ${token}`

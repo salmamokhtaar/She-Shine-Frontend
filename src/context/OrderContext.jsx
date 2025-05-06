@@ -2,6 +2,7 @@ import React, { createContext, useState, useContext } from 'react';
 import { useAuth } from './AuthContext';
 import { useCart } from './CartContext';
 import { toast } from 'react-toastify';
+import config from '../config/config';
 
 const OrderContext = createContext();
 
@@ -18,7 +19,7 @@ export const OrderProvider = ({ children }) => {
 
     try {
       setLoading(true);
-      const response = await fetch('http://localhost:5001/api/orders', {
+      const response = await fetch(`${config.API_URL}/api/orders`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
 
@@ -45,7 +46,7 @@ export const OrderProvider = ({ children }) => {
 
     try {
       setLoading(true);
-      const response = await fetch('http://localhost:5001/api/orders/all', {
+      const response = await fetch(`${config.API_URL}/api/orders/all`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
 
@@ -71,7 +72,7 @@ export const OrderProvider = ({ children }) => {
 
     try {
       setLoading(true);
-      const response = await fetch('http://localhost:5001/api/orders/checkout', {
+      const response = await fetch(`${config.API_URL}/api/orders/checkout`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -108,7 +109,7 @@ export const OrderProvider = ({ children }) => {
 
     try {
       setLoading(true);
-      const response = await fetch(`http://localhost:5001/api/orders/${orderId}`, {
+      const response = await fetch(`${config.API_URL}/api/orders/${orderId}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
